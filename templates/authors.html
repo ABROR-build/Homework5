@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+    <a href="{% url 'list_books' %}">Dashboard</a>
+    <a href="{% url 'list_genres' %}">Genres</a>
+    <a href="{% url 'list_authors' %}">Authors</a>
+    <br>
+    <h1>Authors</h1>
+    <a href="{% url 'create_author' %}">Add</a>
+    {% for author in authors %}
+        <h3>Name: {{ author.author }}</h3>
+        <p>Birthyear: {{ author.author.birth_year }}</p>
+        <a href="{% url 'edit_author' author.pk %}">Edit</a>
+        <a href="{% url 'about_author' author.pk %}">More about author...</a>
+        <a href="{% url 'author_books' author.pk %}">Books...</a>
+        <hr>
+        <br>
+    {% endfor %}
+
+</body>
+</html>

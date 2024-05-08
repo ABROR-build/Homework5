@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Book</title>
+</head>
+<body>
+    <a href="{% url 'list_books' %}">Dashboard</a>
+    <a href="{% url 'list_genres' %}">Genres</a>
+    <a href="{% url 'list_authors' %}">Authors</a>
+    <br>
+    <br>
+
+    <img src="{{ details.image.url }}" height="200">
+    <h3>{{ details.name }}</h3>
+    <p>Price: {{ details.price }}</p>
+    <p>Genre: {{ details.genre }}</p>
+    <br>
+    <p>About book</p>
+    <hr>
+    <p>{{ details.description }}</p>
+    <a href="{% url 'edit_book' details.pk %}">Edit book</a>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Genres</title>
+</head>
+<body>
+    <a href="{% url 'list_books' %}">Dashboard</a>
+    <a href="{% url 'list_genres' %}">Genres</a>
+    <a href="{% url 'list_authors' %}">Authors</a>
+    <br>
+    <h1>Genres</h1>
+    <a href="{% url 'add_book' %}">Add book</a>
+    {% for genre in genres %}
+        <a href="{% url 'about_genre' genre.pk%}">{{ genre.genre_name }}</a><hr><br>
+    {% endfor %}
+
+</body>
+</html>

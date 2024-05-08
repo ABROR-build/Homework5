@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .book-name {
+        color: orange;
+    }
+
+    .price-highlight {
+        color: white;
+        background: red;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <a href="{% url 'list_books' %}">Dashboard</a>
+    <a href="{% url 'list_genres' %}">Genres</a>
+    <a href="{% url 'list_authors' %}">Authors</a>
+    <br>
+
+    <h1>Dashboard</h1>
+    <a href="{% url 'add_book' %}">Add book</a>
+    <br>
+    <br>
+    {% for book in books %}
+        <img src="{{ book.image.url }}" height="200">
+        <h3 class="book-name">{{ book.name }}</h3>
+        <a href="{% url 'about_book' book.pk %}">
+        more...
+        </a>
+        <p class="price-highlight">{{ book.price }}-sum</p>
+        <br>
+        <br>
+
+
+    {% endfor %}
+    <a href="{% url 'list_books' %}">||| Up |||</a>
+
+</body>
+</html>

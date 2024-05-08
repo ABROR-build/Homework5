@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author book</title>
+</head>
+<body>
+<a href="{% url 'list_books' %}">Dashboard</a>
+<a href="{% url 'list_genres' %}">Genres</a>
+<a href="{% url 'list_authors' %}">Authors</a>
+<br>
+<h1>Match author</h1>
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="save">
+</form>
+
+</body>
+</html>

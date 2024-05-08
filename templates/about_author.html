@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Author</title>
+</head>
+<body>
+    <a href="{% url 'list_books' %}">Dashboard</a>
+    <a href="{% url 'list_genres' %}">Genres</a>
+    <a href="{% url 'list_authors' %}">Authors</a>
+    <br>
+    <h1>About auhor</h1>
+    <br>
+    <a href="{% url 'match_author' %}">Match author</a>
+    <h3>{{ author_details.name }}</h3>
+    <p>{{ author_details.birth_year }}</p>
+    <br>
+    <hr>
+    <p>{{ author_details.about }}</p>
+    <br>
+    <a href="{% url 'author_books' author_details.pk %}">Books...</a>
+    <br>
+    <br>
+    <a href="{% url 'delete_author' author_details.pk %}">Delete</a>
+</body>
+</html>
